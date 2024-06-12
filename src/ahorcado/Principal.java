@@ -20,8 +20,7 @@ public class Principal {
 
 		JuegoAhorcado.pintaPista();
 
-		while (!JuegoAhorcado.palabraSecreta.equalsIgnoreCase(JuegoAhorcado.palabraPista)
-				&& intentos < JuegoAhorcado.NUMINTENTOS) {
+		do  {
 
 			do {
 				opc = menu();
@@ -53,7 +52,8 @@ public class Principal {
 
 			System.out.println("Te quedan " + (JuegoAhorcado.NUMINTENTOS-intentos) + " intentos restantes");
 
-		}
+		} while (!JuegoAhorcado.palabraSecreta.equalsIgnoreCase(JuegoAhorcado.palabraPista)
+				&& intentos < JuegoAhorcado.NUMINTENTOS);
 
 		if (intentos >= JuegoAhorcado.NUMINTENTOS) {
 			System.out.println("HAS PERDIDO");
